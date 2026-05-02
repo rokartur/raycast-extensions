@@ -1,0 +1,825 @@
+# Instincts generated from https://github.com/rokartur/raycast-extensions
+# Generated: 2026-03-28T02:35:03.891Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: raycast-extensions-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Commit Length
+
+## Action
+
+Keep commit messages concise (~41 characters)
+
+## Evidence
+
+- Average commit message length: 41 chars
+- Based on 200 commits
+
+---
+id: raycast-extensions-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: raycast-extensions-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: raycast-extensions-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Export Style
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: default
+
+---
+id: raycast-extensions-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: raycast-extensions-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.ts
+
+---
+id: raycast-extensions-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: raycast-extensions-test-mocking
+trigger: "when mocking dependencies in tests"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Test Mocking
+
+## Action
+
+Use jest.mock for mocking
+
+## Evidence
+
+- Mocking pattern detected: jest.mock
+- Consistent across test files
+
+---
+id: raycast-extensions-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Test Types
+
+## Action
+
+Write unit, integration, e2e tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration, e2e
+- Coverage config: yes
+
+---
+id: raycast-extensions-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: extensions/aerospace/src/*, extensions/aerospace/src/utils/*, extensions/one-time-secret/src/*
+
+---
+id: raycast-extensions-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/**/*
+
+---
+id: raycast-extensions-workflow-add-new-extension
+trigger: "when doing add new extension"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Add New Extension
+
+## Action
+
+Follow the add-new-extension workflow:
+1. Create extension directory under extensions/{extension-name}/
+2. Add .gitignore, .prettierrc, eslint config, and tsconfig.json files
+3. Add package.json and package-lock.json
+4. Add README.md and CHANGELOG.md
+5. Add assets (icons, images) and metadata screenshots
+6. Implement main source files in src/
+7. Add initial implementation and utility files
+8. Add initial tests if needed
+9. Update CHANGELOG.md and optimize images
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: extensions/*/.gitignore, extensions/*/.prettierrc, extensions/*/eslint.config.*
+
+---
+id: raycast-extensions-workflow-feature-update-existing-extension
+trigger: "when doing feature update existing extension"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Feature Update Existing Extension
+
+## Action
+
+Follow the feature-update-existing-extension workflow:
+1. Modify or add source files in extensions/{extension}/src/
+2. Update or add assets/metadata if UI or icon changes are involved
+3. Update package.json or package-lock.json if dependencies or commands are changed
+4. Update README.md if user-facing behavior changes
+5. Update CHANGELOG.md to document the feature
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: extensions/*/src/*, extensions/*/assets/*, extensions/*/metadata/*
+
+---
+id: raycast-extensions-workflow-bugfix-extension
+trigger: "when doing bugfix extension"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Bugfix Extension
+
+## Action
+
+Follow the bugfix-extension workflow:
+1. Edit specific source files to address the bug
+2. Update or add tests if needed
+3. Update CHANGELOG.md to document the fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: extensions/*/src/*, extensions/*/CHANGELOG.md, extensions/*/test/*
+
+---
+id: raycast-extensions-workflow-update-extension-assets-or-metadata
+trigger: "when doing update extension assets or metadata"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Update Extension Assets Or Metadata
+
+## Action
+
+Follow the update-extension-assets-or-metadata workflow:
+1. Add or update files in assets/ and/or metadata/ directories
+2. Update package.json if metadata fields change
+3. Update CHANGELOG.md to note asset/metadata changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: extensions/*/assets/*, extensions/*/metadata/*, extensions/*/package.json
+
+---
+id: raycast-extensions-workflow-update-changelog-and-optimize-images
+trigger: "when doing update changelog and optimize images"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Update Changelog And Optimize Images
+
+## Action
+
+Follow the update-changelog-and-optimize-images workflow:
+1. Edit CHANGELOG.md to reflect latest changes
+2. Optimize or compress images in assets/ or metadata/
+3. Commit with message mentioning changelog and image optimization
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~20x per month
+- Files: extensions/*/CHANGELOG.md, extensions/*/assets/*, extensions/*/metadata/*
+
+---
+id: raycast-extensions-workflow-update-codeowners-or-github-metadata
+trigger: "when doing update codeowners or github metadata"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Update Codeowners Or Github Metadata
+
+## Action
+
+Follow the update-codeowners-or-github-metadata workflow:
+1. Edit .github/CODEOWNERS
+2. Optionally edit .github/extensionName2Folder.json or .github/raycast2github.json
+3. Commit with message referencing CODEOWNERS
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: .github/CODEOWNERS, .github/extensionName2Folder.json, .github/raycast2github.json
+
+---
+id: raycast-extensions-naming-files
+trigger: "When creating or renaming files"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Naming Files
+
+## Action
+
+Use camelCase for file names.
+
+## Evidence
+
+- Pattern in extensions/*/src/*
+- Consistent across extensions
+
+---
+id: raycast-extensions-naming-functions
+trigger: "When naming functions"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Naming Functions
+
+## Action
+
+Use camelCase for function names.
+
+## Evidence
+
+- Pattern in extensions/*/src/*
+- TypeScript conventions in repo
+
+---
+id: raycast-extensions-naming-classes
+trigger: "When naming classes"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Naming Classes
+
+## Action
+
+Use PascalCase for class names.
+
+## Evidence
+
+- Pattern in extensions/*/src/*
+- TypeScript conventions in repo
+
+---
+id: raycast-extensions-naming-constants
+trigger: "When declaring constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Naming Constants
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constants.
+
+## Evidence
+
+- Pattern in extensions/*/src/*
+- TypeScript conventions in repo
+
+---
+id: raycast-extensions-import-style
+trigger: "When importing modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Import Style
+
+## Action
+
+Use alias import style.
+
+## Evidence
+
+- Pattern in extensions/*/src/*
+- Mentioned in codeStyle.importStyle
+
+---
+id: raycast-extensions-export-style
+trigger: "When exporting modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Export Style
+
+## Action
+
+Use default exports.
+
+## Evidence
+
+- Pattern in extensions/*/src/*
+- Mentioned in codeStyle.exportStyle
+
+---
+id: raycast-extensions-testing-file-pattern
+trigger: "When adding test files"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Testing File Pattern
+
+## Action
+
+Name test files with the pattern *.test.ts.
+
+## Evidence
+
+- Pattern in extensions/*/test/*
+- Mentioned in testing.filePattern
+
+---
+id: raycast-extensions-testing-framework
+trigger: "When writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Testing Framework
+
+## Action
+
+Use vitest as the testing framework.
+
+## Evidence
+
+- Mentioned in testing.framework
+- Pattern in test config files
+
+---
+id: raycast-extensions-testing-types
+trigger: "When designing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Testing Types
+
+## Action
+
+Include unit, integration, and e2e tests as appropriate.
+
+## Evidence
+
+- Mentioned in testing.testTypes
+- Pattern in test directories
+
+---
+id: raycast-extensions-testing-mocking
+trigger: "When mocking dependencies in tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Testing Mocking
+
+## Action
+
+Use jest.mock style for mocking.
+
+## Evidence
+
+- Mentioned in testing.mockingStyle
+
+---
+id: raycast-extensions-testing-coverage
+trigger: "When configuring tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Testing Coverage
+
+## Action
+
+Enable coverage configuration.
+
+## Evidence
+
+- Mentioned in testing.coverageConfig
+
+---
+id: raycast-extensions-git-commit-format
+trigger: "When writing commit messages"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Git Commit Format
+
+## Action
+
+Start commit messages with a short prefix (e.g., 'Fix:', 'Add:', '[ExtensionName]'), followed by a concise description.
+
+## Evidence
+
+- Examples: 'Dia: Fix escaping in sql query (#26694)', 'Misc: Refresh lockfiles for security advisories (#26695)', '[qBittorrent] Improve add flow and torrent list UI (#26663)'
+
+---
+id: raycast-extensions-git-atomic-commits
+trigger: "When committing changes"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Git Atomic Commits
+
+## Action
+
+Keep commits atomic: each commit should represent a single logical change.
+
+## Evidence
+
+- Short, focused commit messages
+- Commit examples show single-purpose changes
+
+---
+id: raycast-extensions-git-changelog-update
+trigger: "When making user-facing changes or bugfixes"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Git Changelog Update
+
+## Action
+
+Update the extension's CHANGELOG.md to document the change.
+
+## Evidence
+
+- Pattern in workflow commit sequences
+- Files: extensions/*/CHANGELOG.md
+
+---
+id: raycast-extensions-workflow-add-new-extension
+trigger: "When a contributor wants to add a new extension"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Add New Extension
+
+## Action
+
+Create a new directory under extensions/{extension-name}/ and add all required config, source, asset, and documentation files as per the workflow steps.
+
+## Evidence
+
+- Workflow: add-new-extension
+- Files: extensions/*/src/*, extensions/*/package.json, etc.
+- Commit sequences in workflow example
+
+---
+id: raycast-extensions-workflow-feature-update-existing-extension
+trigger: "When adding a new feature or major improvement to an existing extension"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Feature Update Existing Extension
+
+## Action
+
+Modify or add source files, update documentation and changelog, and update assets/metadata as needed.
+
+## Evidence
+
+- Workflow: feature-update-existing-extension
+- Files: extensions/*/src/*, extensions/*/CHANGELOG.md
+- Commit sequences in workflow example
+
+---
+id: raycast-extensions-workflow-bugfix-extension
+trigger: "When fixing a bug in an extension"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Bugfix Extension
+
+## Action
+
+Edit source files to fix the bug, update or add tests if needed, and update the changelog.
+
+## Evidence
+
+- Workflow: bugfix-extension
+- Files: extensions/*/src/*, extensions/*/CHANGELOG.md, extensions/*/test/*
+- Commit sequences in workflow example
+
+---
+id: raycast-extensions-workflow-update-assets-or-metadata
+trigger: "When updating screenshots, icons, or metadata for an extension"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Update Assets Or Metadata
+
+## Action
+
+Update files in assets/ and/or metadata/, update package.json if metadata changes, and update the changelog.
+
+## Evidence
+
+- Workflow: update-extension-assets-or-metadata
+- Files: extensions/*/assets/*, extensions/*/metadata/*, extensions/*/package.json, extensions/*/CHANGELOG.md
+
+---
+id: raycast-extensions-workflow-update-changelog-optimize-images
+trigger: "When merging a PR or finalizing extension changes"
+confidence: 0.93
+domain: workflow
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Update Changelog Optimize Images
+
+## Action
+
+Edit CHANGELOG.md to reflect latest changes and optimize images in assets/ or metadata/.
+
+## Evidence
+
+- Workflow: update-changelog-and-optimize-images
+- Files: extensions/*/CHANGELOG.md, extensions/*/assets/*, extensions/*/metadata/*
+
+---
+id: raycast-extensions-workflow-update-codeowners-or-github-metadata
+trigger: "When updating code ownership or GitHub integration/configuration"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Workflow Update Codeowners Or Github Metadata
+
+## Action
+
+Edit .github/CODEOWNERS and optionally .github/extensionName2Folder.json or .github/raycast2github.json.
+
+## Evidence
+
+- Workflow: update-codeowners-or-github-metadata
+- Files: .github/CODEOWNERS, .github/extensionName2Folder.json, .github/raycast2github.json
+
+---
+id: raycast-extensions-error-handling-try-catch
+trigger: "When handling errors in code"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Error Handling Try Catch
+
+## Action
+
+Use try-catch blocks for error handling.
+
+## Evidence
+
+- Mentioned in errorHandling.style
+- Pattern in extensions/*/src/*
+
+---
+id: raycast-extensions-error-handling-no-custom-error-classes
+trigger: "When defining error handling logic"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: rokartur/raycast-extensions
+---
+
+# Raycast Extensions Error Handling No Custom Error Classes
+
+## Action
+
+Do not define custom error classes; use standard Error.
+
+## Evidence
+
+- Mentioned in errorHandling.customErrorClasses
+
